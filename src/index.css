@@ -1,0 +1,32 @@
+@font-face {
+  font-family: teste;
+  src: url("./assets/font/pokemon-2.ttf");
+}
+
+:root {
+  background-color: black;
+  font-weight: normal;
+  color: white;
+}
+
+button {
+  width: 200px;
+  margin: 20px 0;
+  letter-spacing: 3px;
+  border-radius: 15px;
+  padding-bottom: 15px;
+  border: none;
+  background-color: whitesmoke;
+  color: #292929;
+  font-family: teste, "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  color: #c52018;
+  background-color: #fff6a4;
+
+  border-radius: 18px;
+  font-size: 0.82rem;
+}
