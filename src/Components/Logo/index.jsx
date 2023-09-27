@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
 import image from "../../assets/react-pokedex.jpg";
 import { ContainerLogo, ImageContainer } from "./style";
 
 function Logo() {
   return (
-    <ContainerLogo>
-      <ImageContainer>
-        <img src={image} />
-      </ImageContainer>
-    </ContainerLogo>
+    <Link to="/">
+      <ContainerLogo>
+        <ImageContainer>
+          <img src={image} />
+        </ImageContainer>
+      </ContainerLogo>
+    </Link>
   );
 }
 

@@ -6,11 +6,15 @@
 :root {
   background-color: black;
   font-weight: normal;
-  color: white;
+  color: white;  
 }
 
 button {
-  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 70px;
   margin: 20px 0;
   letter-spacing: 3px;
   border-radius: 15px;
@@ -21,12 +25,25 @@ button {
   font-family: teste, "Courier New", Courier, monospace;
   font-size: 0.8rem;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+
+button > img {
+  display: block;
+  width: 30px;
+  margin-top: 15px;
+  transition: 0.5s ease-in-out;
+  margin-right: 10px;
 }
 
 button:hover {
   color: #c52018;
   background-color: #fff6a4;
-
-  border-radius: 18px;
+  border-radius: 17px;
   font-size: 0.82rem;
+  filter: none;
+  -webkit-filter: none;
 }
