@@ -36,26 +36,6 @@ function ButtonsActions() {
           Adicionar Pokemon
         </button>
       </Link>
-      <Link style={{ textDecoration: "none" }} to="/changepokemon">
-        <button
-          value="3"
-          onMouseEnter={handleButtonHover}
-          onMouseLeave={handleLeaveButtonHover}
-        >
-          {buttonHover == "3" ? <img src={imagePokeball} /> : <></>}
-          Alterar Pokemon
-        </button>
-      </Link>
-      <Link style={{ textDecoration: "none" }} to="/deletepokemon">
-        <button
-          value="4"
-          onMouseEnter={handleButtonHover}
-          onMouseLeave={handleLeaveButtonHover}
-        >
-          {buttonHover == "4" ? <img src={imagePokeball} /> : <></>}
-          Excluir Pokemon
-        </button>
-      </Link>
     </ContainerButtons>
   );
 }

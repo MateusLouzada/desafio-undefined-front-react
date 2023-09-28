@@ -1,12 +1,14 @@
 @font-face {
-  font-family: teste;
+  font-family: pokemon;
   src: url("./assets/font/pokemon-2.ttf");
 }
 
 :root {
   background-color: black;
   font-weight: normal;
-  color: white;  
+  color: white;
+  font-family: pokemon, "Courier New", Courier, monospace;
+  letter-spacing: 3px;
 }
 
 button {
@@ -16,13 +18,13 @@ button {
   width: 240px;
   height: 70px;
   margin: 20px 0;
-  letter-spacing: 3px;
   border-radius: 15px;
   padding-bottom: 15px;
   border: none;
   background-color: whitesmoke;
   color: #292929;
-  font-family: teste, "Courier New", Courier, monospace;
+  font-family: pokemon, "Courier New", Courier, monospace;
+  letter-spacing: 3px;
   font-size: 0.8rem;
   transition: 0.3s ease-in-out;
   cursor: pointer;
@@ -46,4 +48,24 @@ button:hover {
   font-size: 0.82rem;
   filter: none;
   -webkit-filter: none;
+}
+
+input,
+textarea {
+  background-color: whitesmoke;
+  color: #292929;
+  font-family: pokemon, "Courier New", Courier, monospace;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+  border: none;
+  width: 300px;
+  padding: 0 20px;
+}
+
+input:focus,
+textarea:focus {
+  color: #c52018;
+  background-color: #fff6a4;
 }
