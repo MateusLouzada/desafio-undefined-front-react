@@ -14,7 +14,7 @@ export const CardPokemon = styled.div`
   padding: 20px;
   color: #c52018;
   border-radius: 18px;
-  margin-top: 20px;
+  margin: 20px 0 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;

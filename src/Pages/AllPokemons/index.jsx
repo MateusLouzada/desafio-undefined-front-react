@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import api from "../../services/pokemonApi";
 import { ButtonClose, CardPokemon, ContainerPokemons } from "./style";
 import { Modal } from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const style = {
   position: "absolute",
@@ -9,7 +11,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  backgroundColor: "#708090",
+  backgroundColor: "#1a1a1a",
   border: "1px solid #000",
   borderRadius: "10px",
   boxShadow: 24,
@@ -40,7 +42,7 @@ function AllPokemons() {
   const handleDescription = (e) => setDescriptionPokemon(e.target.value);
 
   const getPokemons = async () => {
-    api
+    await api
       .get("/api/pokemon")
       .then((res) => {
         setPokemons(res.data);
@@ -49,27 +51,45 @@ function AllPokemons() {
   };
 
   const changePokemon = async () => {
-    api
+    await api
       .put(`/api/pokemon?id=${id}`, {
         name: namePokemon,
         description: descriptionPokemon,
         typePokemon: typePokemon,
       })
-      .then((res) => {
+      .then(() => {
         handleClose();
         getPokemons();
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const deletePokemon = async () => {
-    api
-      .delete(`/api/pokemon/${id}`)
-      .then((res) => {
-        getPokemons();
+        toast("Pokemon atualizado", {
+          type: "success",
+          theme: "dark",
+        });
       })
       .catch((err) => {
         console.log(err);
+        toast("Aconteceu um problema", {
+          type: "error",
+          theme: "dark",
+        });
+      });
+  };
+
+  const deletePokemon = async (pokemon, e) => {
+    await api
+      .delete(`/api/pokemon/${pokemon.id}`)
+      .then(() => {
+        getPokemons();
+        toast("Pokemon excluído", {
+          type: "error",
+          theme: "dark",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        toast("Aconteceu um problema", {
+          type: "error",
+          theme: "dark",
+        });
       });
   };
 
@@ -98,11 +118,12 @@ function AllPokemons() {
               <p>{pokemon.description}</p>
             </div>
             <hr />
-            <button onClick={handleOpen.bind(this, pokemon)}>Alterar</button>
-            <button onClick={deletePokemon}>Deletar</button>
+            <button onClick={handleOpen.bind(this, pokemon)}>ALTERAR</button>
+            <button onClick={deletePokemon.bind(this, pokemon)}>DELETAR</button>
           </CardPokemon>
         );
       })}
+      <ToastContainer />
       <Modal
         open={open}
         onClose={handleClose}
@@ -110,9 +131,7 @@ function AllPokemons() {
         aria-describedby="modal-modal-description"
       >
         <div style={style}>
-          <ButtonClose onClick={handleClose}>
-            X
-          </ButtonClose>
+          <ButtonClose onClick={handleClose}>X</ButtonClose>
           <div>
             <p>Nome</p>
             <input type="text" value={namePokemon} onChange={handleName} />
@@ -131,7 +150,7 @@ function AllPokemons() {
             ></textarea>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <button onClick={changePokemon}>Alterar</button>
+            <button onClick={changePokemon}>ALTERAR</button>
           </div>
         </div>
       </Modal>

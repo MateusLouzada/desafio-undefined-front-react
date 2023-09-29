@@ -23,7 +23,7 @@ function ButtonsActions() {
           onMouseLeave={handleLeaveButtonHover}
         >
           {buttonHover == "1" ? <img src={imagePokeball} /> : <></>}
-          Consultar Pokemons
+          Pokemons
         </button>
       </Link>
       <Link style={{ textDecoration: "none" }} to="/addpokemon">
