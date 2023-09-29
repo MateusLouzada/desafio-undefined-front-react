@@ -1,8 +1,36 @@
-# React + Vite
+# Pokedex - React
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/MateusLouzada/front-books/blob/main/LICENCE) 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Sobre o projeto
 
-Currently, two official plugins are available:
+O projeto é um desafio técnico para a vaga de engenheiro de software na empresa Undefined. Trata-se de desenvolver um sistema full-stack que simula um pokedex.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Tecnologias utilizadas
+## Back end
+- .NET
+- SQL_Server
+## Front end
+- React js
+- Angular js
+
+# Como executar o projeto
+
+```bash
+# clonar repositório
+git clone https://github.com/MateusLouzada/front-books.git
+
+# entrar na pasta do projeto
+cd desafio-undefined-front-react
+
+# instalar dependências
+yarn
+
+# executar o projeto
+yarn dev
+```
+
+# Autor
+
+Mateus Louzada de Carvalho
+
+https://www.linkedin.com/in/mateus-louzada-de-carvalho-67a261169/
