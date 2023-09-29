@@ -17,7 +17,7 @@ O projeto é um desafio técnico para a vaga de engenheiro de software na empres
 
 ```bash
 # clonar repositório
-git clone https://github.com/MateusLouzada/front-books.git
+git clone https://github.com/MateusLouzada/desafio-undefined-front-react.git
 
 # entrar na pasta do projeto
 cd desafio-undefined-front-react
